@@ -814,9 +814,12 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 .honor-media img {
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
-.honor-media-icon {
+.honor-media-icon, .honor-media-logo {
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(135deg, var(--light-ocean) 0%, rgba(44, 140, 107, 0.08) 100%);
+}
+.honor-media-logo img {
+  width: auto; height: auto; max-width: 70%; max-height: 70%; object-fit: contain;
 }
 .honor-media-icon i[data-lucide] {
   width: 56px; height: 56px; color: var(--sea-green); stroke-width: 1.5;
