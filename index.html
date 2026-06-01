@@ -14,10 +14,10 @@
     (no id)               — Mission strip (dark transitional bar)
     #threat               — Problem statement with 5 pillar cards + 3 stat boxes
     #founder              — Terrance P. Long bio, roles grid, achievements
-    #projects             — 3 research initiatives (CHEMSEA, MODUM, DAIMON)
-    #documentaries        — 4x2 grid of documentary/broadcast thumbnails
-    #operations           — 2 field operation case studies
     #action               — UN Ocean Action #21356 framework + 5-step solution
+    #projects             — 3 research initiatives (CHEMSEA, MODUM, DAIMON)
+    #documentaries        — centered grid of 7 documentary/broadcast thumbnails (4+3)
+    #operations           — 2 field operation case studies
     #accreditations       — 2-column logo table (accreditations vs. cooperators)
     #experts              — 6 expert collaborator cards
     #services             — 4 service offering cards with CTAs
@@ -58,13 +58,13 @@
   <ul class="nav-links">
     <li><a href="#threat">The Threat</a></li>
     <li><a href="#founder">Founder</a></li>
-    <li><a href="#accreditations">Accreditations</a></li>
-    <li><a href="#experts">Experts</a></li>
+    <li><a href="#action">Ocean Action</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#documentaries">Documentaries</a></li>
     <li><a href="#operations">Operations</a></li>
+    <li><a href="#accreditations">Accreditations</a></li>
+    <li><a href="#experts">Experts</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#action">Ocean Action</a></li>
     <li><button class="btn-nav" onclick="scrollToContact()">Contact</button></li>
   </ul>
 </nav>
@@ -97,7 +97,7 @@
         "Underwater munitions will make ocean plastic look like a lollipop." — George Orbelian, Project Kaisei
       </blockquote>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="scrollToContact()">Support Ocean Action <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+        <button class="btn-primary" onclick="openContact('support')">Support Ocean Action <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
         <button class="btn-outline" onclick="openContact('speaking')">Book As Speaker</button>
       </div>
     </div>
@@ -158,7 +158,6 @@
 <section class="content-section" id="threat">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">The Hidden Crisis</div>
       <h2 class="section-title">The <em>Silent Threat</em> Beneath Our Oceans</h2>
     </div>
     <div class="threat-grid">
@@ -231,7 +230,6 @@
 <section class="content-section alt" id="founder">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Leadership</div>
       <h2 class="section-title">Global Expert & <em>Cooperator</em></h2>
     </div>
     <div class="founder-grid">
@@ -307,67 +305,93 @@
     <div class="action-header-row">
       <div class="action-header-text">
         <div class="section-header">
-          <div class="section-eyebrow">A Formal International Commitment</div>
           <h2 class="section-title">United Nations <em>Ocean Action #21356</em></h2>
         </div>
-        <p class="threat-text" style="margin-bottom: 0;">
+        <p class="threat-text" style="margin-bottom: 24px;">
           UN Ocean Action #21356 represents the formal international commitment to address underwater munitions on a global scale. Led by Terrance P. Long CD., this initiative provides the framework for cooperation across national boundaries, bringing public and private sectors together to implement sustainable solutions.
         </p>
+        <div class="action-cta-row">
+          <button class="btn-primary" onclick="openContact('support')">Support This Initiative <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+        </div>
       </div>
       <div class="action-header-logo">
+        <img src="images/partners/Logo_of_the_United_Nations.svg" alt="United Nations" class="action-un-logo">
         <img src="images/ocean-action-logo.png" alt="Communities of Ocean Action — Implementation of Sustainable Development Goal 14">
       </div>
     </div>
-    <div class="action-grid">
-      <div class="action-items">
+    <!-- "Our work includes" — orients the icon pillars as IDUM's workstreams within Ocean Action -->
+    <div class="section-header solution-journey-head" style="margin-top: 48px;">
+      <div class="section-eyebrow">Our work includes</div>
+    </div>
+    <div class="action-items">
         <div class="action-item">
-          <div class="action-num">1</div>
+          <div class="action-icon"><i data-lucide="handshake"></i></div>
           <div>
             <div class="action-title">International Dialogues with Global Stakeholders</div>
             <div class="action-body">Bringing together governments, military, scientists, and NGOs across national borders to coordinate responses.</div>
           </div>
         </div>
         <div class="action-item">
-          <div class="action-num">2</div>
+          <div class="action-icon"><i data-lucide="map"></i></div>
           <div>
             <div class="action-title">Comprehensive Global Munitions Map</div>
             <div class="action-body">Documenting locations, types, and quantities of underwater munitions across all 54 affected seas and inland waters.</div>
           </div>
         </div>
         <div class="action-item">
-          <div class="action-num">3</div>
+          <div class="action-icon"><i data-lucide="target"></i></div>
           <div>
             <div class="action-title">Risk-Ranked Cleanup Priorities</div>
             <div class="action-body">Focusing resources where they're needed most — ranked by environmental risk and human health impact.</div>
           </div>
         </div>
         <div class="action-item">
-          <div class="action-num">4</div>
+          <div class="action-icon"><i data-lucide="clipboard-check"></i></div>
           <div>
             <div class="action-title">Standardized Protocols & Technologies</div>
             <div class="action-body">Establishing best practices for safe, effective, and environmentally sound remediation globally.</div>
           </div>
         </div>
         <div class="action-item">
-          <div class="action-num">5</div>
+          <div class="action-icon"><i data-lucide="graduation-cap"></i></div>
           <div>
             <div class="action-title">Training & Certification Programs</div>
             <div class="action-body">Building global capacity — preparing the next generation of specialists with tools and expertise to restore resilient oceans.</div>
           </div>
         </div>
       </div>
-      <div class="action-visual">
-        <div class="action-badge-large"><i data-lucide="waves"></i> UN Recognized Initiative</div>
-        <div class="action-visual-title">The Solution Framework</div>
-        <div class="solution-steps">
-          <div class="solution-step"><div class="step-num">1</div><div class="step-text">Support Ocean Action 21356 — come together to cooperate globally</div></div>
-          <div class="solution-step"><div class="step-num">2</div><div class="step-text">Advanced Detection — AUVs, ROVs, specialized sonars and sensors</div></div>
-          <div class="solution-step"><div class="step-num">3</div><div class="step-text">Non-destructive Recovery — protect marine ecosystems during remediation</div></div>
-          <div class="solution-step"><div class="step-num">4</div><div class="step-text">Contribute to the global database development</div></div>
-          <div class="solution-step"><div class="step-num">5</div><div class="step-text">International Binding Treaty — enforce accountability across nations</div></div>
+    <!-- THE PATH TO A SOLUTION — full-width horizontal stepper (replaces the old dark vertical card).
+         Reads left-to-right as a sequence so it no longer competes with the numbered pillars above. -->
+    <div class="solution-journey">
+      <!-- "Our Plan for a Solution" — orients the stepper as the sequential path to the treaty -->
+      <div class="section-header solution-journey-head">
+        <div class="section-eyebrow">Our Plan for a Solution</div>
+      </div>
+      <div class="journey-steps">
+        <div class="journey-step">
+          <div class="journey-marker">1</div>
+          <div class="journey-label">Support</div>
+          <div class="journey-desc">Back Ocean Action #21356 — come together to cooperate globally</div>
         </div>
-        <div style="margin-top: 28px;">
-          <button class="btn-primary" onclick="scrollToContact()">Support This Initiative <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+        <div class="journey-step">
+          <div class="journey-marker">2</div>
+          <div class="journey-label">Detect</div>
+          <div class="journey-desc">Advanced detection with AUVs, ROVs, sonar and sensors</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-marker">3</div>
+          <div class="journey-label">Recover</div>
+          <div class="journey-desc">Non-destructive recovery that protects marine ecosystems</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-marker">4</div>
+          <div class="journey-label">Database</div>
+          <div class="journey-desc">Contribute to the global underwater munitions database</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-marker">5</div>
+          <div class="journey-label">Treaty</div>
+          <div class="journey-desc">An International Binding Treaty to enforce accountability across nations</div>
         </div>
       </div>
     </div>
@@ -384,7 +408,6 @@
 <section class="content-section alt" id="projects">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Scientific Projects</div>
       <h2 class="section-title">International Research <em>Initiatives</em></h2>
     </div>
     <div class="projects-list">
@@ -404,7 +427,7 @@
           <div class="project-title">Chemical Munitions Search & Assessment</div>
           <p class="project-desc">Pioneering project mapping chemical weapons dump sites in the Baltic Sea using advanced sonar and ROV technology.</p>
           <div class="project-achievements">
-            <div class="project-achievements-title">Key Achievements</div>
+            <div class="project-achievements-title">Key achievements</div>
             <div class="project-achievement"><i data-lucide="check"></i> Mapped 300,000+ tons of chemical weapons</div>
             <div class="project-achievement"><i data-lucide="check"></i> Established first comprehensive Baltic munitions database</div>
             <div class="project-achievement"><i data-lucide="check"></i> Led to Baltic Sea blasting moratorium</div>
@@ -429,7 +452,7 @@
           <div class="project-title">Monitoring of Dumped Munitions</div>
           <p class="project-desc">NATO Science for Peace and Security program developing advanced monitoring systems for underwater munitions sites.</p>
           <div class="project-achievements">
-            <div class="project-achievements-title">Key Achievements</div>
+            <div class="project-achievements-title">Key achievements</div>
             <div class="project-achievement"><i data-lucide="check"></i> Deployed autonomous monitoring stations</div>
             <div class="project-achievement"><i data-lucide="check"></i> Real-time toxin detection systems</div>
             <div class="project-achievement"><i data-lucide="check"></i> AI-powered munitions classification</div>
@@ -454,7 +477,7 @@
           <div class="project-title">Decision Aids for Marine Munitions</div>
           <p class="project-desc">International project creating decision-support tools and treaty frameworks for global munitions remediation.</p>
           <div class="project-achievements">
-            <div class="project-achievements-title">Key Achievements</div>
+            <div class="project-achievements-title">Key achievements</div>
             <div class="project-achievement"><i data-lucide="check"></i> Risk assessment modeling tools</div>
             <div class="project-achievement"><i data-lucide="check"></i> Treaty pathway development</div>
             <div class="project-achievement"><i data-lucide="check"></i> Cost-benefit analysis frameworks</div>
@@ -470,21 +493,16 @@
 
 <!-- ════════════════════════════════════════════════════════════════════
      DOCUMENTARIES
-     4-column grid of 7 film thumbnails + 1 text cell. Some cells link to
-     external sites (underwatermunitions.org, NFB, TV5). Films 4-5 have
-     no links yet. Images stored in images/films/.
+     Centered flex grid of 7 film thumbnails (4 on top, 3 centered below).
+     Some cells link to external sites (underwatermunitions.org, NFB, TV5).
+     Films 4-5 have no links yet. Images stored in images/films/.
      ════════════════════════════════════════════════════════════════════ -->
 <section class="content-section" id="documentaries">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Documentaries</div>
       <h2 class="section-title">Award-Winning Documentaries and <em>International Broadcasts</em></h2>
     </div>
     <div class="docs-grid">
-      <!-- Row 1 -->
-      <div class="docs-text-cell">
-        <p>Terrance has raised public awareness through numerous broadcasts.</p>
-      </div>
       <div class="docs-img-cell">
         <a href="https://underwatermunitions.org" target="_blank" rel="noopener">
           <img src="images/films/film-1.png" alt="Documentary 1" class="docs-thumb">
@@ -500,7 +518,6 @@
           <img src="images/films/film-3.png" alt="Bomb Hunters of the Baltic" class="docs-thumb">
         </a>
       </div>
-      <!-- Row 2 -->
       <div class="docs-img-cell">
         <img src="images/films/film-4.png" alt="Documentary 4" class="docs-thumb">
       </div>
@@ -529,7 +546,6 @@
 <section class="content-section alt" id="operations">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Operations</div>
       <h2 class="section-title">Field Operations and <em>Training</em></h2>
     </div>
     <div class="projects-list">
@@ -581,48 +597,35 @@
 <section class="content-section" id="accreditations">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Accreditations & Collaborators</div>
       <h2 class="section-title">Global <em>Recognition</em> & Collaboration</h2>
     </div>
+    <!-- Two stacked sections (desktop + mobile): each has a full-width header
+         band over one wrapping row of logos, so logos fill the full container
+         width and render larger. -->
     <div class="accred-table">
-      <!-- Row 1: Headers -->
-      <div class="accred-row accred-header-row">
-        <div class="accred-col accred-col-header">International Accreditations</div>
-        <div class="accred-col accred-col-header">Cooperating Organizations</div>
-      </div>
-      <!-- Row 2 -->
-      <div class="accred-row">
-        <div class="accred-col">
-          <div class="accred-logos">
-            <div class="accred-logo-item"><img src="images/partners/un.png" alt="United Nations" class="accred-logo"></div>
-            <div class="accred-logo-item"><img src="images/partners/nato.png" alt="NATO" class="accred-logo"></div>
-            <div class="accred-logo-item"><img src="images/partners/opcw.jpg" alt="OPCW" class="accred-logo"></div>
-          </div>
-        </div>
-        <div class="accred-col">
-          <div class="accred-logos">
-            <div class="accred-logo-item"><img src="images/partners/scripps.png" alt="Scripps Institution of Oceanography" class="accred-logo"></div>
-            <div class="accred-logo-item"><img src="images/partners/woods.png" alt="Woods Hole Oceanographic Institution" class="accred-logo"></div>
-            <div class="accred-logo-item"><img src="images/partners/monaco.png" alt="Monaco Oceanographic Museum" class="accred-logo"></div>
-          </div>
+      <!-- Section 1: International Accreditations -->
+      <div class="accred-section">
+        <div class="accred-col-header">International accreditations</div>
+        <div class="accred-logos">
+          <div class="accred-logo-item"><img src="images/partners/un.png" alt="United Nations" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/nato.png" alt="NATO" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/opcw.jpg" alt="OPCW" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/sdg13.png" alt="UN SDG 13 - Climate Action" class="accred-logo accred-logo-square"></div>
+          <div class="accred-logo-item"><img src="images/partners/sdg14.png" alt="UN SDG 14 - Life Below Water" class="accred-logo accred-logo-square"></div>
+          <div class="accred-logo-item"><img src="images/partners/helcom.png" alt="HELCOM" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/ospar.png" alt="OSPAR Commission" class="accred-logo"></div>
         </div>
       </div>
-      <!-- Row 3 -->
-      <div class="accred-row">
-        <div class="accred-col">
-          <div class="accred-logos">
-            <div class="accred-logo-item"><img src="images/partners/sdg13.png" alt="UN SDG 13 - Climate Action" class="accred-logo accred-logo-square"></div>
-            <div class="accred-logo-item"><img src="images/partners/sdg14.png" alt="UN SDG 14 - Life Below Water" class="accred-logo accred-logo-square"></div>
-            <div class="accred-logo-item"><img src="images/partners/helcom.png" alt="HELCOM" class="accred-logo"></div>
-            <div class="accred-logo-item"><img src="images/partners/ospar.png" alt="OSPAR Commission" class="accred-logo"></div>
-          </div>
-        </div>
-        <div class="accred-col">
-          <div class="accred-logos">
-            <div class="accred-logo-item"><img src="images/partners/exponent.png" alt="Exponent" class="accred-logo"></div>
-            <div class="accred-logo-item"><img src="images/partners/climate.png" alt="Climate Foundation" class="accred-logo"></div>
-            <div class="accred-logo-item"><img src="images/partners/tetiaroa.png" alt="Tetiaroa Society" class="accred-logo"></div>
-          </div>
+      <!-- Section 2: Cooperating Organizations (3-up grid of wider wordmarks) -->
+      <div class="accred-section accred-section--coop">
+        <div class="accred-col-header">Cooperating organizations</div>
+        <div class="accred-logos">
+          <div class="accred-logo-item"><img src="images/partners/scripps.png" alt="Scripps Institution of Oceanography" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/woods-transparent.png" alt="Woods Hole Oceanographic Institution" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/monaco.png" alt="Monaco Oceanographic Museum" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/exponent.png" alt="Exponent" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/climate.png" alt="Climate Foundation" class="accred-logo"></div>
+          <div class="accred-logo-item"><img src="images/partners/tetiaroa.png" alt="Tetiaroa Society" class="accred-logo"></div>
         </div>
       </div>
     </div>
@@ -636,7 +639,6 @@
          ──────────────────────────────────────────────────────────────── -->
     <div class="honors-subsection">
       <div class="honors-header">
-        <div class="section-eyebrow">Leadership & Recognition</div>
         <h3 class="honors-title">International Accreditations</h3>
       </div>
       <div class="honors-grid">
@@ -696,7 +698,7 @@
         </article>
 
         <article class="honor-card">
-          <div class="honor-media honor-media-icon"><i data-lucide="anchor"></i></div>
+          <div class="honor-media honor-media-logo"><img src="images/partners/isa-color.png" alt="International Seabed Authority (ISA) crest"></div>
           <div class="honor-body">
             <span class="honor-label">Ocean Governance · Kingston, Jamaica</span>
             <h4 class="honor-name">International Seabed Authority (ISA) — IWG-ENV Contributor</h4>
@@ -705,7 +707,7 @@
         </article>
 
         <article class="honor-card">
-          <div class="honor-media honor-media-icon"><i data-lucide="graduation-cap"></i></div>
+          <div class="honor-media honor-media-logo"><img src="images/honors/polish-naval-academy.png" alt="Polish Naval Academy crest"></div>
           <div class="honor-body">
             <span class="honor-label">Academic · Gdynia, Poland</span>
             <h4 class="honor-name">Scientific Committee — Maritime Security Yearbook, Polish Naval Academy</h4>
@@ -714,7 +716,7 @@
         </article>
 
         <article class="honor-card">
-          <div class="honor-media"><img src="images/honors/ocean-legacy-coin.jpg" alt="Royal Canadian Mint — Ocean Legacy Coin"></div>
+          <div class="honor-media honor-media-logo"><img src="images/honors/royal-canadian-mint.svg" alt="Royal Canadian Mint"></div>
           <div class="honor-body">
             <span class="honor-label">Award · Government of Canada, 2020</span>
             <h4 class="honor-name">Royal Canadian Mint — Ocean Legacy Coin</h4>
@@ -732,7 +734,7 @@
         </article>
 
         <article class="honor-card">
-          <div class="honor-media"><img src="images/honors/princes-trust.jpg" alt="Prince's Trust Canada — Veteran Entrepreneur Award Nominee"></div>
+          <div class="honor-media honor-media-logo"><img src="images/honors/princes-trust.png" alt="Prince's Trust Canada logo"></div>
           <div class="honor-body">
             <span class="honor-label">Nomination · 2023</span>
             <h4 class="honor-name">Prince's Trust Canada — Veteran Entrepreneur Award Nominee</h4>
@@ -763,7 +765,6 @@
 <section class="content-section alt" id="experts">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Expert Network</div>
       <h2 class="section-title">World-Renowned <em>Collaborators</em></h2>
     </div>
     <p class="threat-text" style="max-width: 720px; margin-bottom: 32px;">
@@ -832,7 +833,6 @@
 <section class="content-section" id="services">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Professional Services</div>
       <h2 class="section-title">How Terrance Can <em>Help You</em></h2>
     </div>
     <p class="threat-text" style="max-width: 720px; margin-bottom: 32px;">
@@ -842,7 +842,6 @@
 
       <!-- Consulting -->
       <div class="service-card">
-        <div class="service-eyebrow">Consulting Services</div>
         <div class="service-icon"><i data-lucide="landmark"></i></div>
         <div class="service-title">Expert Advisory Services</div>
         <div class="service-subtitle">For Governments, Military & Industry</div>
@@ -858,7 +857,6 @@
 
       <!-- Speaking -->
       <div class="service-card">
-        <div class="service-eyebrow">Speaking Engagements</div>
         <div class="service-icon"><i data-lucide="mic"></i></div>
         <div class="service-title">International Speaking</div>
         <div class="service-subtitle">Keynotes, Panels & Presentations</div>
@@ -874,7 +872,6 @@
 
       <!-- Media -->
       <div class="service-card">
-        <div class="service-eyebrow">Media Collaboration</div>
         <div class="service-icon"><i data-lucide="video"></i></div>
         <div class="service-title">Media & Documentary</div>
         <div class="service-subtitle">Expert Commentary & Collaboration</div>
@@ -890,7 +887,6 @@
 
       <!-- Data -->
       <div class="service-card">
-        <div class="service-eyebrow">Data Services</div>
         <div class="service-icon"><i data-lucide="database"></i></div>
         <div class="service-title">Data Licensing & Analysis</div>
         <div class="service-subtitle">Exclusive Database Access</div>
@@ -910,19 +906,19 @@
 
 <!-- ════════════════════════════════════════════════════════════════════
      CONTACT FORM
-     Dynamic 5-tab form. Tab selection is handled by switchTab() in script.js:
+     Dynamic 6-tab form. Tab selection is handled by switchTab() in script.js:
        - Updates form title/subtitle via #form-dynamic-title / #form-dynamic-subtitle
        - Shows/hides #field-location and #field-timeframe based on tabMeta config
        - Updates submit button text via #form-submit-btn
-     Tab keys must match tabMeta object keys in script.js: consulting, speaking,
-     media, data, partnerships.
-     On submit: form hides, #form-success shows for 4 seconds, then resets.
+     Tab keys must match tabMeta object keys in script.js: support, consulting,
+     speaking, media, data, partnerships.
+     On submit: POSTs to Web3Forms (emails oceanbombhunters@gmail.com); on success
+     #form-success shows for 6 seconds, then the form resets.
      Right sidebar: contact info card (sticky on desktop) + affiliations chips.
      ════════════════════════════════════════════════════════════════════ -->
 <section class="content-section alt" id="contact-form-section">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Get In Touch</div>
       <h2 class="section-title">Connect with <em>Terrance P. Long CD.</em></h2>
     </div>
     <p class="threat-text" style="max-width: 720px; margin-bottom: 32px;">
@@ -933,7 +929,8 @@
       <!-- Form — tab buttons must have data-tab matching tabMeta keys in script.js -->
       <div>
         <div class="contact-tabs">
-          <button class="contact-tab active" data-tab="consulting" onclick="switchTab(this, 'consulting')">Consulting</button>
+          <button class="contact-tab active" data-tab="support" onclick="switchTab(this, 'support')">Support</button>
+          <button class="contact-tab" data-tab="consulting" onclick="switchTab(this, 'consulting')">Consulting</button>
           <button class="contact-tab" data-tab="speaking" onclick="switchTab(this, 'speaking')">Speaking</button>
           <button class="contact-tab" data-tab="media" onclick="switchTab(this, 'media')">Media</button>
           <button class="contact-tab" data-tab="data" onclick="switchTab(this, 'data')">Data Access</button>
@@ -942,45 +939,49 @@
 
         <div class="contact-form-wrap">
           <div id="form-title-wrap">
-            <div class="form-title" id="form-dynamic-title">Expert Consultation Request</div>
-            <div class="form-subtitle" id="form-dynamic-subtitle">For government, military, or industry consultation on underwater munitions.</div>
+            <div class="form-title" id="form-dynamic-title">Support UN Ocean Action: #21356</div>
+            <div class="form-subtitle" id="form-dynamic-subtitle">Thanks for your support. Contact us below to partner, donate or share how you'd like to support this UN initiative.</div>
           </div>
           <div id="form-success" class="form-success">
             <i data-lucide="check-circle"></i>
             <div>Thank you — your message has been sent. Terrance will be in touch shortly.</div>
           </div>
-          <form id="contact-form" onsubmit="handleSubmit(event)">
+          <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+            <!-- Inquiry type: set by switchTab() in script.js; drives the email subject -->
+            <input type="hidden" id="field-inquiry-type" name="inquiry_type" value="Support">
+            <!-- Web3Forms honeypot: hidden from humans; bots that tick it are dropped -->
+            <input type="checkbox" name="botcheck" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Name *</label>
-                <input class="form-input" type="text" placeholder="Your full name" required>
+                <label class="form-label" for="field-name">Name *</label>
+                <input class="form-input" id="field-name" name="name" type="text" placeholder="Your full name" required>
               </div>
               <div class="form-group">
-                <label class="form-label">Organization</label>
-                <input class="form-input" type="text" placeholder="Company / Institution">
+                <label class="form-label" for="field-org">Organization</label>
+                <input class="form-input" id="field-org" name="organization" type="text" placeholder="Company / Institution">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Email *</label>
-                <input class="form-input" type="email" placeholder="your@email.com" required>
+                <label class="form-label" for="field-email">Email *</label>
+                <input class="form-input" id="field-email" name="email" type="email" placeholder="your@email.com" required>
               </div>
               <div class="form-group">
-                <label class="form-label">Phone</label>
-                <input class="form-input" type="tel" placeholder="+1 000 000 0000">
+                <label class="form-label" for="field-phone">Phone</label>
+                <input class="form-input" id="field-phone" name="phone" type="tel" placeholder="+1 000 000 0000">
               </div>
             </div>
-            <div class="form-group" id="field-location">
-              <label class="form-label">Project Location</label>
-              <input class="form-input" type="text" placeholder="Country / Region / Body of water">
+            <div class="form-group" id="field-location" style="display: none;">
+              <label class="form-label" for="field-location-input">Project location</label>
+              <input class="form-input" id="field-location-input" name="location" type="text" placeholder="Country / Region / Body of water">
             </div>
             <div class="form-group">
-              <label class="form-label">Brief Description *</label>
-              <textarea class="form-textarea" placeholder="Describe your project or inquiry..." rows="4" required></textarea>
+              <label class="form-label" for="field-description">Brief description *</label>
+              <textarea class="form-textarea" id="field-description" name="description" placeholder="Describe your project or inquiry..." rows="4" required></textarea>
             </div>
-            <div class="form-group" id="field-timeframe">
-              <label class="form-label">Timeframe</label>
-              <select class="form-select">
+            <div class="form-group" id="field-timeframe" style="display: none;">
+              <label class="form-label" for="field-timeframe-input">Timeframe</label>
+              <select class="form-select" id="field-timeframe-input" name="timeframe">
                 <option value="" disabled selected>Select timeframe</option>
                 <option>Immediate (within 30 days)</option>
                 <option>Short-term (1–3 months)</option>
@@ -990,8 +991,10 @@
               </select>
             </div>
             <button type="submit" class="form-submit" id="form-submit-btn">
-              Submit Request <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+              Submit Support Inquiry <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
             </button>
+            <p class="form-error" id="form-error" role="alert"></p>
+            <p class="form-privacy">Your details are emailed only to the IDUM team to respond to your inquiry. We don't share them.</p>
           </form>
         </div>
       </div>
@@ -1016,7 +1019,7 @@
         </div>
 
         <div class="contact-affiliations">
-          <div class="contact-affil-title">Accreditations and Collaborators</div>
+          <div class="contact-affil-title">Accreditations &amp; collaborators</div>
           <div class="contact-affil-chips">
             <span class="contact-affil-chip">United Nations</span>
             <span class="contact-affil-chip">NATO SPS</span>
@@ -1045,13 +1048,12 @@
      ════════════════════════════════════════════════════════════════════ -->
 <section class="cta-section">
   <div class="container">
-    <div class="section-eyebrow">Take Action</div>
     <h2 class="section-title">Help Us <em>Protect</em> the World's Oceans</h2>
     <p class="cta-body">
       Join governments, foundations, and scientists worldwide in supporting the creation of an internationally binding treaty to address underwater munitions.
     </p>
     <div class="cta-actions">
-      <button class="btn-primary" onclick="scrollToContact()">Support Ocean Action #21356 <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
+      <button class="btn-primary" onclick="openContact('support')">Support Ocean Action #21356 <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></button>
       <button class="btn-outline" onclick="scrollToContact()"><i data-lucide="message-circle" style="width:16px;height:16px;"></i> Contact Our Team</button>
     </div>
   </div>

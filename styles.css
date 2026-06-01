@@ -62,12 +62,22 @@
   --ocean-blue: #1F5E7A;
   --sea-green: #2C8C6B;
   --sea-green-soft: #34A07A;
+  --sea-green-ink: #1F6E54;   /* darker green — AA-safe for small text on white/tints */
   --light-ocean: #E8F3F8;
   --charcoal: #1E1E1E;
   --slate: #5F6B73;
   --light-gray: #F3F4F6;
   --white: #FFFFFF;
   --off-white: #FAFBFC;
+
+  /* ── Label typography (see "TYPOGRAPHIC LABEL SYSTEM" section) ──
+     Two roles, deliberately distinct:
+       • Micro-header — sentence case, readable; labels a group/section or form field.
+       • Overline tag — small-caps, orienting; dates, pills, eyebrows (scanned, not read). */
+  --label-micro-size: 14px;          /* micro-headers + form field labels */
+  --label-micro-weight: 600;
+  --label-overline-size: 12px;       /* small-caps orienting tags */
+  --label-overline-tracking: 1.4px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -409,7 +419,6 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
    CONTENT SECTIONS — SHARED LAYOUT
    Base styles reused by all content sections. .content-section.alt
    toggles off-white background for visual rhythm between sections.
-   .section-eyebrow::after adds a 40px green line after the label text.
    .section-title em renders accent-colored text (not italic).
    ══════════════════════════════════════════════════════════════════ */
 .content-section {
@@ -421,18 +430,27 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 }
 .container { max-width: 1200px; margin: 0 auto; }
 
+/* ──────────────────────────────────────────────────────────────────
+   TYPOGRAPHIC LABEL SYSTEM
+   Small text comes in two deliberately distinct roles. Pick by intent:
+
+   1. MICRO-HEADER  — sentence case, readable; labels a group/section or
+      form field the reader actually reads. Tokens: --label-micro-*.
+      Style: var(--label-micro-size)/600, letter-spacing 0, --deep-ocean.
+      Used by: .accred-col-header, .project-achievements-title,
+               .contact-affil-title, .action-box-title, .form-label
+   2. OVERLINE TAG  — small-caps, orienting; dates, pills, eyebrows that
+      are scanned, not read. Tokens: --label-overline-*.
+      Style: var(--label-overline-size)/700, tracked caps, --sea-green-ink.
+      Used by: .project-meta, .honor-label, .founder-tag, .service-eyebrow
+
+   NOT part of this system (intentional caps): buttons & tabs (.btn-*,
+   .service-btn, .form-submit, .contact-tab) and dark-surface labels
+   (.hero-eyebrow, .stats-label, .footer-logo).
+   ────────────────────────────────────────────────────────────────── */
+
 .section-header {
   margin-bottom: 56px;
-}
-.section-eyebrow {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--sea-green);
-  margin-bottom: 16px;
-}
-.section-eyebrow::after {
-  content: ''; width: 40px; height: 2px;
-  background: var(--sea-green);
 }
 .section-title {
   font-size: clamp(28px, 4vw, 40px);
@@ -549,10 +567,11 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 .founder-img-frame img {
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
-.founder-tag {
+.founder-tag {  /* overline tag */
   margin-top: 16px; text-align: center;
-  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--sea-green);
+  font-size: var(--label-overline-size); font-weight: 700;
+  letter-spacing: var(--label-overline-tracking); text-transform: uppercase;
+  color: var(--sea-green-ink);
 }
 .founder-name {
   font-size: 28px; font-weight: 700; color: var(--deep-ocean); margin-bottom: 4px;
@@ -640,13 +659,14 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   background: linear-gradient(180deg, transparent 50%, rgba(11, 42, 60, 0.5) 100%);
 }
 .project-content { display: flex; flex-direction: column; gap: 12px; }
-.project-meta {
+.project-meta {  /* overline tag */
   display: flex; gap: 12px; flex-wrap: wrap;
-  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  font-size: var(--label-overline-size); font-weight: 700;
+  letter-spacing: var(--label-overline-tracking); text-transform: uppercase;
 }
 .project-meta-year { color: var(--deep-ocean); }
-.project-meta-sep { color: var(--light-gray); }
-.project-meta-loc { color: var(--sea-green); }
+.project-meta-sep { color: var(--slate); opacity: 0.4; }
+.project-meta-loc { color: var(--sea-green-ink); }
 .project-title { font-size: 22px; font-weight: 700; color: var(--deep-ocean); line-height: 1.25; }
 .project-desc { font-size: 15px; line-height: 1.75; color: var(--slate); }
 .project-achievements {
@@ -654,9 +674,9 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   background: var(--light-ocean); border: 1px solid rgba(44, 140, 107, 0.15);
   border-radius: 10px;
 }
-.project-achievements-title {
-  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--sea-green); margin-bottom: 12px;
+.project-achievements-title {  /* micro-header */
+  font-size: var(--label-micro-size); font-weight: var(--label-micro-weight);
+  letter-spacing: 0; color: var(--deep-ocean); margin-bottom: 12px;
 }
 .project-achievement {
   display: flex; gap: 10px; align-items: flex-start;
@@ -672,16 +692,14 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 /* ══════════════════════════════════════════════════════════════════
    DOCUMENTARIES
    ══════════════════════════════════════════════════════════════════ */
+/* Flex (not grid) so a final row with fewer than 4 posters centers under the
+   top row instead of left-aligning with an empty trailing slot. 7 posters →
+   4 on top, 3 centered below. flex-basis math: (100% - 3*16px gap) / 4 = 25% - 12px. */
 .docs-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px;
-}
-.docs-text-cell {
-  display: flex; align-items: center; justify-content: center;
-  background: var(--light-ocean); border: 1px solid rgba(44, 140, 107, 0.15);
-  border-radius: 10px; padding: 20px;
-  font-size: 14px; font-weight: 400; line-height: 1.7; color: var(--slate); text-align: center;
+  display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 48px;
 }
 .docs-img-cell {
+  flex: 0 1 calc(25% - 12px);
   background: var(--light-gray); border: 1px solid var(--light-gray);
   border-radius: 10px; overflow: hidden;
   aspect-ratio: 3/4; transition: all 0.25s ease;
@@ -700,16 +718,30 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 }
 .action-header-text { min-width: 0; }
 .action-header-text .section-header { margin-bottom: 24px; }
+/* Right column stacks the UN logo above the Communities of Ocean Action lockup,
+   reinforcing that #21356 is a UN initiative and filling the space above COA.
+   Column layout means it stacks vertically on mobile automatically. */
 .action-header-logo {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 28px;
 }
 .action-header-logo img {
   max-width: 100%; height: auto; display: block;
 }
-.action-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 48px;
+/* UN lockup is a secondary endorsement mark — kept small so the focus stays on
+   the heading and the COA image below it (extra class specificity beats the rule
+   above). UN blue #009EDB shows natively — no white-out filter here. */
+.action-header-logo .action-un-logo { max-width: 40%; }
+/* CTA row under the intro — prominent primary action, elevated here (instead of
+   buried in the old right-hand card) so the ask is visible immediately under the
+   section's opening paragraph. */
+.action-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+/* The five pillars — 2-column grid of numbered cards (was the left column of
+   the old 2-up grid; now full width since the dark card is gone). */
+.action-items {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
 }
-.action-items { display: flex; flex-direction: column; gap: 14px; }
 .action-item {
   display: flex; gap: 16px; align-items: flex-start;
   padding: 18px 20px;
@@ -717,39 +749,43 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   border-radius: 10px; transition: all 0.25s ease;
 }
 .action-item:hover { border-color: var(--sea-green); box-shadow: 0 4px 16px rgba(11, 42, 60, 0.06); }
-.action-num {
-  flex-shrink: 0; width: 32px; height: 32px;
-  background: var(--sea-green); border-radius: 8px;
+/* Quiet, descriptive icon marker — soft tinted (NOT filled green) so the pillars
+   read as a calm feature list, visually distinct from and quieter than the bold
+   filled-circle numbered journey stepper below. */
+.action-icon {
+  flex-shrink: 0; width: 36px; height: 36px;
+  background: var(--light-ocean); border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 700; color: var(--white);
+  color: var(--sea-green);
 }
+.action-icon i { width: 18px; height: 18px; stroke-width: 2; }
 .action-title { font-size: 15px; font-weight: 600; color: var(--deep-ocean); margin-bottom: 4px; }
 .action-body { font-size: 13px; line-height: 1.6; color: var(--slate); }
-.action-visual {
-  background: var(--deep-ocean); border: 1px solid rgba(44, 140, 107, 0.25);
-  border-radius: 16px; padding: 32px;
+
+/* The Path to a Solution — full-width horizontal stepper.
+   A left-to-right "journey" reads as a sequence, so it no longer competes with
+   the vertical numbered pillars above (the original "two numbered lists" problem).
+   The connecting line is drawn by each step's ::before; markers sit above it with
+   a white "halo" (box-shadow) so the line appears to pass behind them. */
+.solution-journey { margin-top: 64px; }
+.solution-journey-head { margin-bottom: 32px; }
+.journey-steps { display: grid; grid-template-columns: repeat(5, 1fr); }
+.journey-step { position: relative; padding: 0 12px; text-align: center; }
+.journey-step::before {
+  content: ''; position: absolute; top: 22px; left: -50%;
+  width: 100%; height: 2px; background: var(--light-gray); z-index: 0;
 }
-.action-badge-large {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(44, 140, 107, 0.15); border: 1px solid rgba(44, 140, 107, 0.3);
-  padding: 10px 18px; border-radius: 6px; margin-bottom: 24px;
-  font-size: 12px; font-weight: 600; letter-spacing: 1px; color: var(--sea-green-soft);
-}
-.action-badge-large i { width: 18px; height: 18px; }
-.action-visual-title { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
-.solution-steps { display: flex; flex-direction: column; gap: 12px; }
-.solution-step {
-  display: flex; gap: 14px; align-items: center;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.06); border-radius: 8px;
-}
-.step-num {
-  width: 28px; height: 28px; flex-shrink: 0;
-  background: var(--sea-green-soft); border-radius: 50%;
+.journey-step:first-child::before { display: none; }
+.journey-marker {
+  position: relative; z-index: 1;
+  width: 44px; height: 44px; margin: 0 auto 16px;
+  border-radius: 50%; background: var(--sea-green); color: var(--white);
   display: flex; align-items: center; justify-content: center;
-  font-size: 12px; font-weight: 700; color: var(--deep-ocean);
+  font-size: 16px; font-weight: 700;
+  box-shadow: 0 0 0 5px var(--white);
 }
-.step-text { font-size: 13px; color: rgba(255, 255, 255, 0.8); }
+.journey-label { font-size: 15px; font-weight: 700; color: var(--deep-ocean); margin-bottom: 6px; }
+.journey-desc { font-size: 13px; line-height: 1.5; color: var(--slate); }
 
 /* ══════════════════════════════════════════════════════════════════
    ACCREDITATIONS TABLE
@@ -759,26 +795,42 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   border: 1px solid var(--light-gray);
   border-radius: 12px; overflow: hidden;
 }
-.accred-row { display: grid; grid-template-columns: 1fr 1fr; }
-.accred-header-row { border-bottom: 1px solid var(--light-gray); background: var(--light-ocean); }
-.accred-col { padding: 12px 16px; }
-.accred-col + .accred-col { border-left: 1px solid var(--light-gray); }
-.accred-col-header {
-  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--sea-green);
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  padding: 14px 16px;
+/* Two stacked sections, divided by a horizontal rule (was a 2-col table). */
+.accred-section + .accred-section { border-top: 1px solid var(--light-gray); }
+.accred-col-header {  /* micro-header */
+  font-size: var(--label-micro-size); font-weight: var(--label-micro-weight);
+  letter-spacing: 0; color: var(--deep-ocean);
+  background: var(--light-ocean); border-bottom: 1px solid var(--light-gray);
+  text-align: center; padding: 16px 16px;
 }
+/* Logos laid out as a centered flex grid. Flex (not CSS grid) is deliberate:
+   it centers a partial final row, so Accreditations' 7 logos read as a
+   balanced 4 + centered-3 instead of leaving an empty trailing cell.
+   Item widths set the columns-per-row: default 4-up; --coop section 3-up. */
 .accred-logos {
-  display: flex; align-items: center; justify-content: space-evenly;
-  flex-wrap: nowrap; gap: 8px; padding: 24px 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 40px 32px; padding: 48px 32px;
 }
-.accred-logo-item { display: flex; align-items: center; justify-content: center; flex: 1 1 0; min-width: 0; }
+.accred-logo-item {
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 calc(25% - 24px);   /* 4 per row */
+}
+.accred-section--coop .accred-logo-item {
+  flex-basis: calc(33.333% - 22px);   /* 3 per row — wider cells for wordmarks */
+}
 .accred-logo {
-  max-height: 72px; max-width: 100%; width: auto; object-fit: contain;
+  max-height: 100px; max-width: 100%; width: auto; object-fit: contain;
   opacity: 0.85; transition: all 0.2s;
+  /* Subtle rounding so solid-background emblems (UN, NATO, SDGs, HELCOM, OSPAR,
+     Woods Hole, Tetiaroa) match the site's rounded aesthetic. Transparent-bg
+     wordmarks are unaffected. Logos render at natural aspect ratio, so this
+     rounds the visible image corners (not an empty letterbox). */
+  border-radius: 8px;
 }
-.accred-logo-square { max-height: 80px; max-width: 80px; }
+/* Cooperators are wide wordmarks — let them grow taller in their wider cells. */
+.accred-section--coop .accred-logo { max-height: 112px; }
+/* Square emblems (SDGs) read larger at a given height, so cap them tighter. */
+.accred-logo-square { max-height: 92px; max-width: 92px; }
 .accred-logo:hover { opacity: 1; transform: scale(1.05); }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -816,7 +868,15 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 }
 .honor-media-icon, .honor-media-logo {
   display: flex; align-items: center; justify-content: center;
+}
+/* Icon placeholders keep a subtle tinted backdrop so the lone icon has presence. */
+.honor-media-icon {
   background: linear-gradient(135deg, var(--light-ocean) 0%, rgba(44, 140, 107, 0.08) 100%);
+}
+/* Contained logos sit on white so the media area blends into the white card body —
+   the logo reads as integrated, not boxed on a tint. */
+.honor-media-logo {
+  background: var(--white);
 }
 .honor-media-logo img {
   width: auto; height: auto; max-width: 70%; max-height: 70%; object-fit: contain;
@@ -825,10 +885,11 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   width: 56px; height: 56px; color: var(--sea-green); stroke-width: 1.5;
 }
 .honor-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px; }
-.honor-label {
+.honor-label {  /* overline tag (pill) */
   display: inline-block; align-self: flex-start;
-  font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
-  color: var(--sea-green);
+  font-size: var(--label-overline-size); font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--sea-green-ink);
   background: rgba(44, 140, 107, 0.1);
   padding: 5px 12px; border-radius: 999px;
   line-height: 1.4;
@@ -883,9 +944,10 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 }
 .service-card:hover { border-color: var(--sea-green); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(11, 42, 60, 0.08); }
 .service-card:hover::before { opacity: 1; }
-.service-eyebrow {
-  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--sea-green); margin-bottom: 14px;
+.service-eyebrow {  /* overline tag */
+  font-size: var(--label-overline-size); font-weight: 700;
+  letter-spacing: var(--label-overline-tracking); text-transform: uppercase;
+  color: var(--sea-green-ink); margin-bottom: 14px;
 }
 .service-icon { margin-bottom: 14px; color: var(--deep-ocean); }
 .service-icon i { width: 32px; height: 32px; stroke-width: 1.5; }
@@ -941,9 +1003,9 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
 .form-subtitle { font-size: 14px; color: var(--slate); margin-bottom: 28px; line-height: 1.5; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { margin-bottom: 16px; }
-.form-label {
-  display: block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-  color: var(--deep-ocean); margin-bottom: 6px;
+.form-label {  /* field label — sentence case for readability */
+  display: block; font-size: var(--label-micro-size); font-weight: var(--label-micro-weight);
+  letter-spacing: 0; color: var(--deep-ocean); margin-bottom: 6px;
 }
 .form-input, .form-select, .form-textarea {
   width: 100%; background: var(--off-white);
@@ -967,6 +1029,18 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   transition: all 0.2s; margin-top: 8px;
 }
 .form-submit:hover { background: var(--sea-green-soft); transform: translateY(-1px); }
+.form-submit:disabled { opacity: 0.6; cursor: progress; transform: none; }
+/* Honeypot: off-screen, never shown to humans (bots fill it → rejected) */
+.form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-error {
+  display: none; margin-top: 12px; text-align: center;
+  font-size: 14px; color: #B4232A;
+}
+.form-error.visible { display: block; }
+.form-privacy {
+  margin-top: 14px; text-align: center;
+  font-size: 12px; line-height: 1.5; color: var(--slate);
+}
 .contact-info-block { position: sticky; top: 100px; }
 .contact-info-card {
   background: var(--white); border: 1px solid var(--light-gray);
@@ -984,9 +1058,9 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   background: var(--off-white); border: 1px solid var(--light-gray);
   border-radius: 10px; padding: 20px;
 }
-.contact-affil-title {
-  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--slate); margin-bottom: 14px;
+.contact-affil-title {  /* micro-header */
+  font-size: var(--label-micro-size); font-weight: var(--label-micro-weight);
+  letter-spacing: 0; color: var(--deep-ocean); margin-bottom: 14px;
 }
 .contact-affil-chips { display: flex; gap: 8px; flex-wrap: wrap; }
 .contact-affil-chip {
@@ -1004,9 +1078,9 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   background: var(--light-ocean); border: 1px solid rgba(44, 140, 107, 0.15);
   border-radius: 10px;
 }
-.action-box-title {
-  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--sea-green); margin-bottom: 10px;
+.action-box-title {  /* micro-header */
+  font-size: var(--label-micro-size); font-weight: var(--label-micro-weight);
+  letter-spacing: 0; color: var(--deep-ocean); margin-bottom: 10px;
 }
 .action-box p { font-size: 13px; line-height: 1.6; color: var(--slate); }
 
@@ -1022,22 +1096,30 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   .roles-grid { grid-template-columns: 1fr; }
   .project-row, .project-row.reverse { grid-template-columns: 1fr; direction: ltr; }
   .project-row.reverse > * { direction: ltr; }
-  .docs-grid { grid-template-columns: 1fr 1fr; }
-  .action-grid { grid-template-columns: 1fr; gap: 40px; }
+  .docs-img-cell { flex-basis: calc(50% - 8px); }
+  .action-items { grid-template-columns: 1fr; }
+  .journey-steps { grid-template-columns: 1fr; gap: 18px; }
+  .journey-step { display: grid; grid-template-columns: 44px 1fr; gap: 14px; text-align: left; padding: 0; align-items: start; }
+  .journey-step::before { display: none; }
+  .journey-marker { margin: 0; }
   .experts-grid { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-info-block { position: static; }
   .form-row { grid-template-columns: 1fr; }
-  .accred-row { grid-template-columns: 1fr; }
-  .accred-col + .accred-col { border-left: none; border-top: 1px solid var(--light-gray); }
+  .accred-logos { gap: 28px 24px; padding: 32px 20px; }
+  .accred-logo-item,
+  .accred-section--coop .accred-logo-item { flex-basis: calc(50% - 12px); }  /* 2 per row */
+  .accred-logo,
+  .accred-section--coop .accred-logo { max-height: 80px; }
+  .accred-logo-square { max-height: 72px; max-width: 72px; }
   .honors-grid { grid-template-columns: repeat(2, 1fr); }
   .honors-title { font-size: 28px; }
   .action-header-row { grid-template-columns: 1fr; gap: 32px; }
   .action-header-logo img { max-width: 360px; }
 }
 @media (max-width: 600px) {
-  .docs-grid { grid-template-columns: 1fr; }
+  .docs-img-cell { flex-basis: 100%; }
   .experts-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .honors-grid { grid-template-columns: 1fr; }
@@ -1052,13 +1134,6 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   background: linear-gradient(180deg, var(--deep-ocean) 0%, #081E2B 100%);
   padding: 96px 48px;
   text-align: center;
-}
-.cta-section .section-eyebrow {
-  color: var(--sea-green-soft);
-  justify-content: center;
-}
-.cta-section .section-eyebrow::after {
-  display: none;
 }
 .cta-section .section-title {
   color: var(--white);
