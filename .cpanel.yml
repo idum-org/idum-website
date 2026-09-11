@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/idumykez/public_html/
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R script.js $DEPLOYPATH
+    - /bin/cp -R styles.css $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
