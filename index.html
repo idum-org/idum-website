@@ -105,31 +105,45 @@
       <div class="stats-card">
         <div class="stats-label">The Scale of the Crisis</div>
         <div class="stats-grid">
+          <!-- TODO(Terry, Sep 9 2026 feedback): replaced hard numbers with descriptive
+               copy per his request. Split each sentence into a short headline (stat-num)
+               + fuller caption (stat-label) to fit the existing tile design — worth a
+               sanity check from Eric/Craig on the split before this goes live. -->
           <div class="stat-item">
-            <div class="stat-num">1.6M</div>
-            <div class="stat-label">Tons of Munitions</div>
+            <div class="stat-num">100s of Millions</div>
+            <div class="stat-label">Tons of munitions scattered throughout the seas and oceans</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">54</div>
-            <div class="stat-label">Affected Seas</div>
+            <div class="stat-num">1910–1970s</div>
+            <div class="stat-label">First recorded chemical weapons dumping (English Channel) through the mid-1970s</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">3,000+</div>
-            <div class="stat-label">Documented Sites</div>
+            <div class="stat-num">Thousands</div>
+            <div class="stat-label">Dump sites and munitions wrecks in the marine environment</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">40+</div>
-            <div class="stat-label">Countries Mapped</div>
+            <div class="stat-num">Undisclosed</div>
+            <div class="stat-label">Most governments have not released the number of sites and what they contain</div>
           </div>
         </div>
       </div>
       <div class="hero-partners">
-        <div class="hero-partners-label">Partner Accreditations</div>
+        <div class="hero-partners-label">Partner Accreditation and Affiliations</div>
         <div class="hero-partners-logos">
           <img src="images/partners/Logo_of_the_United_Nations.svg" alt="United Nations" class="partner-un">
           <img src="images/partners/OPCW_3x.png" alt="OPCW" class="partner-opcw">
           <img src="images/partners/International_Seabed_Authority_Logo.svg" alt="International Seabed Authority" class="partner-isa">
           <img src="images/partners/Nato_logo.svg" alt="NATO" class="partner-nato">
+          <!-- TODO(Terry, Sep 9 2026 feedback): tried adding Helsinki Commission
+               (images/partners/helcom.png) and SDG 13/14 (sdg13.png, sdg14.png —
+               both already in the repo) here, but .hero-partners-logos img applies
+               `filter: brightness(0) invert(1)` (styles.css ~line 20) to force every
+               logo to white/monochrome for this strip. The NATO/UN/OPCW/ISA marks
+               survive that fine, but the full-color SDG squares just turn into a
+               blank white block. "Ocean Action" logo and the "SDG Ring" also have no
+               matching asset at all yet. Needs a real design decision (separate
+               un-filtered row? recolored SDG marks?) before adding these — reverted
+               to the original 4 logos for now. -->
         </div>
       </div>
     </div>
@@ -146,6 +160,10 @@
   <div class="mission-inner">
     <p class="mission-text">
       IDUM's mission is to promote the creation of an <strong>Internationally Binding Treaty</strong> on all classes—biological, chemical, conventional, and radiological—of underwater munitions, to lead to the cleanup of our seas and oceans worldwide.
+    </p>
+    <!-- Added per Terry's Sep 9 2026 feedback -->
+    <p class="mission-text">
+      Ocean dumping was a cheap means of disposal for countries' excess, obsolete, damaged and time-expired munitions. Learn about IDUM's <a href="https://underwatermunitions.org/unep-vc/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Voluntary Commitment to the UN Environment Programme (SDG 14)</a>.
     </p>
   </div>
 </div>
@@ -239,7 +257,7 @@
         </div>
         <div class="founder-tag">Chair & Founder, IDUM</div>
         <div class="contact-strip">
-          <a href="mailto:terrancelong@underwatermunitions.org"><i data-lucide="mail"></i> terrancelong@underwatermunitions.org</a>
+          <a href="mailto:oceanbombhunters@gmail.com"><i data-lucide="mail"></i> oceanbombhunters@gmail.com</a>
           <a href="tel:+19025779439"><i data-lucide="phone"></i> +1 902-577-9439</a>
         </div>
       </div>
@@ -247,10 +265,16 @@
         <h3 class="founder-name">Terrance P. Long CD.</h3>
         <p class="founder-role">Global Authority on Underwater & Submerged Munitions</p>
         <p class="founder-bio">Terrance (Terry) P. Long is the Chair and founder of the International Dialogues on Underwater Munitions (IDUM) and a world-leading expert on sea-dumped chemical and conventional weapons. A retired Canadian Military Engineer with over 30 years of experience specializing in Explosive Ordnance Disposal (EOD), Terrance has led international efforts to address the environmental and human health impacts of underwater and submerged munitions globally.</p>
-        <p class="founder-bio">As the driving force behind UN Ocean Action #21356, Terrance has established the international framework for underwater munitions responses. His advocacy led to the landmark Baltic Sea blasting moratorium, creating a global model for environmental protection. He maintains the world's most comprehensive database of underwater munitions sites, including newly declassified records and coordinates that inform risk assessment and cleanup operations worldwide.</p>
+        <p class="founder-bio">Terrance P. Long is a recognized global authority and leading voice in the response to underwater munitions. As the driving force behind UN Ocean Action #21356, and the international dialogues to address the environmental and safety risks of sea-dumped weapons. Through decades of dedicated advocacy, Terry has collaborated with international bodies, research institutes, and Baltic Sea regional initiatives to shape global models for marine protection and munitions clearance. His leadership within the International Dialogue on Underwater Munitions (IDUM) continues to unite governments, scientists, and industry stakeholders, leveraging critical mapping data and risk assessments to drive safer, more sustainable ocean cleanup operations worldwide.</p>
 
         <div class="roles-grid">
           <div class="role-item"><i data-lucide="chevron-right"></i> Chair, International Dialogues on Underwater Munitions (IDUM)</div>
+          <!-- TODO(Terry, Sep 9 2026 feedback): transfer the Advisory Board (ISTAB)
+               page content from https://underwatermunitions.org/advisory-board/ —
+               background on ISTAB's mandate (requested by Lithuania's Foreign
+               Minister at the 2010 OPCW Conference of States Parties), its
+               10+-nationality membership, and the MTS Special Editor's Award note.
+               Needs a decision on where this lives (own section vs. expanded here). -->
           <div class="role-item"><i data-lucide="chevron-right"></i> Chair, International Science & Technology Advisory Board (ISTAB)</div>
           <div class="role-item"><i data-lucide="chevron-right"></i> Partner & Co-Director, NATO Science for Peace and Security MODUM Program</div>
           <div class="role-item"><i data-lucide="chevron-right"></i> Associated Partner & Co-Director, CHEMSEA (Chemical Munitions Search & Assessment)</div>
@@ -259,14 +283,19 @@
         </div>
 
         <div class="achievements-list">
-          <div class="achievement"><div class="achievement-dot"></div><span>Recipient of "The Hague OPCW Award" for the elimination of chemical weapons</span></div>
-          <div class="achievement"><div class="achievement-dot"></div><span>Lead author, <em>Legal Aspects of Marine Munitions Management: Decision Making in the Face of Uncertainty and Risk</em></span></div>
-          <div class="achievement"><div class="achievement-dot"></div><span>Chaired Expert Panel on Human Health and Environment impacts at CDC</span></div>
-          <div class="achievement"><div class="achievement-dot"></div><span>Contributor to UN Resolution A/RES/65/149 on underwater munitions</span></div>
-          <div class="achievement"><div class="achievement-dot"></div><span>Delivered special remarks in the European Parliament on chemical residues and unexploded ordnance</span></div>
-          <div class="achievement"><div class="achievement-dot"></div><span>Thematic Keynote, Kiel Expert Panel Round Table on Dumped Munitions in the Baltic Sea</span></div>
-          <div class="achievement"><div class="achievement-dot"></div><span>Special Editor's Award, Marine Technology Journal (MTS), Legacy of Underwater Munitions</span></div>
-          <div class="achievement"><div class="achievement-dot"></div><span>United Nations commissioned Officer with missions across Africa, Middle East, Asia, and Europe</span></div>
+          <!-- TODO(Terry, Sep 9 2026 feedback): kept the [1,2,3,4] citation markers
+               as plain text since the site has no footnote/reference system —
+               needs real linked sources before publishing. -->
+          <div class="achievement"><div class="achievement-dot"></div><span>As a prominent member organization of the Chemical Weapons Convention (CWC) Coalition, IDUM played a vital role in the collective efforts that earned the coalition the prestigious OPCW-The Hague Award. Serving as a key face and voice for underwater chemical weapons responses at the Organisation for the Prohibition of Chemical Weapons (OPCW) headquarters in The Hague, Terry's leadership was instrumental in this global recognition. The award, which carries the legacy of the OPCW's 2013 Nobel Peace Prize, underscores Terry and IDUM's tireless global advocacy and diplomatic engagement toward the permanent elimination of chemical weapons from our international waters. [1, 2, 3, 4]</span></div>
+        </div>
+
+        <p style="font-weight:600;margin-top:1.5rem;margin-bottom:0.75rem;">Global Advocacy, High-Level Briefings &amp; Recognition</p>
+        <div class="achievements-list">
+          <div class="achievement"><div class="achievement-dot"></div><span><strong>Chaired Expert Panel at the CDC:</strong> Led the critical panel investigating the direct impacts of sea-dumped weapons on human health and marine environments at the Centers for Disease Control and Prevention.</span></div>
+          <div class="achievement"><div class="achievement-dot"></div><span><strong>Contributor to UN Resolution A/RES/65/149:</strong> Provided essential expertise and data that informed this foundational United Nations resolution on addressing the global threat of sea-dumped chemical munitions.</span></div>
+          <div class="achievement"><div class="achievement-dot"></div><span><strong>Addressed the European Parliament:</strong> Delivered special remarks to European lawmakers detailing the ecological and security risks posed by unexploded ordnance and toxic chemical residues.</span></div>
+          <div class="achievement"><div class="achievement-dot"></div><span><strong>Thematic Keynote at the Kiel Expert Panel:</strong> Served as the headline speaker at the prominent Kiel Round Table, shaping international dialogue on recovering dumped munitions in the Baltic Sea.</span></div>
+          <div class="achievement"><div class="achievement-dot"></div><span><strong>Recipient of the MTS Special Editor's Award:</strong> Honored by the Marine Technology Society (MTS) Journal for his landmark work and editorial leadership on the "Legacy of Underwater Munitions" special issue.</span></div>
         </div>
       </div>
     </div>
@@ -426,13 +455,7 @@
           </div>
           <div class="project-title">Chemical Munitions Search & Assessment</div>
           <p class="project-desc">Pioneering project mapping chemical weapons dump sites in the Baltic Sea using advanced sonar and ROV technology.</p>
-          <div class="project-achievements">
-            <div class="project-achievements-title">Key achievements</div>
-            <div class="project-achievement"><i data-lucide="check"></i> Mapped 300,000+ tons of chemical weapons</div>
-            <div class="project-achievement"><i data-lucide="check"></i> Established first comprehensive Baltic munitions database</div>
-            <div class="project-achievement"><i data-lucide="check"></i> Led to Baltic Sea blasting moratorium</div>
-            <div class="project-achievement"><i data-lucide="check"></i> Created environmental impact assessment protocols</div>
-          </div>
+          <!-- Removed per Terry's Sep 9 2026 feedback ("remove yellow: Key achievements") -->
           <div class="project-partners"><strong>Partners:</strong> NATO, European Commission, Baltic Sea nations</div>
         </div>
       </div>
@@ -616,6 +639,20 @@
           <div class="accred-logo-item"><img src="images/partners/ospar.png" alt="OSPAR Commission" class="accred-logo"></div>
         </div>
       </div>
+      <!-- TODO(Terry, Sep 9 2026 feedback): Terry says the logos below (Scripps,
+           Woods Hole, Monaco, Exponent, Climate Foundation, Tetiaroa) are "George's"
+           network, not IDUM's actual Cooperating Organizations list. He wants IDUM's
+           real list transferred from https://underwatermunitions.org/cooperating-organizations-2/
+           — that page has ~35 organizations (UN, Interreg, OSPAR, CHEMSEA, MODUM,
+           Lithuanian EPA, CDC, Swedish Coast Guard, SYKE, VERIFIN, Maritime Office
+           Gdynia, Green Screen Festival, NABU, Ikanawtiket, OPCW, Helsinki Commission,
+           IO PAN, Polish Naval Academy, MUT, MIG, SIPRI, FFI, Finland Min. of Environment,
+           Geological Survey of Sweden, Chalmers, Nature Research Centre, EU, ISA,
+           NATO SPS, EU Baltic Strategy, Pentarius, AWI, Thünen Institute, TU Clausthal,
+           IOS, GRD, GSM — most with a short description, few/none with logo files we
+           have here). This needs a real design + asset pass with Eric/Craig, not a
+           guess — left the existing "George's" logos in place until that's decided.
+           Full text pulled from the live page is available on request. -->
       <!-- Section 2: Cooperating Organizations (3-up grid of wider wordmarks) -->
       <div class="accred-section accred-section--coop">
         <div class="accred-col-header">Cooperating organizations</div>
@@ -1004,9 +1041,9 @@
         <div class="contact-info-card">
           <div class="contact-info-name">Terrance P. Long CD.</div>
           <div class="contact-info-role">Chair & Founder, IDUM — Global Expert on Underwater Munitions</div>
-          <a href="mailto:terrancelong@underwatermunitions.org" class="contact-detail">
+          <a href="mailto:oceanbombhunters@gmail.com" class="contact-detail">
             <i data-lucide="mail"></i>
-            terrancelong@underwatermunitions.org
+            oceanbombhunters@gmail.com
           </a>
           <a href="tel:+19025779439" class="contact-detail">
             <i data-lucide="phone"></i>
