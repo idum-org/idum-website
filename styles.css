@@ -658,6 +658,12 @@ nav.scrolled .nav-links a:hover { color: var(--deep-ocean); }
   position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 50%, rgba(11, 42, 60, 0.5) 100%);
 }
+/* Added per Terry's Sep 14 2026 feedback — photo credit captions, using the
+   existing bottom gradient in .project-img-overlay for legibility. */
+.project-img-caption {
+  position: absolute; left: 16px; right: 16px; bottom: 14px;
+  color: #fff; font-size: 13px; line-height: 1.4; font-weight: 600;
+}
 .project-content { display: flex; flex-direction: column; gap: 12px; }
 .project-meta {  /* overline tag */
   display: flex; gap: 12px; flex-wrap: wrap;
